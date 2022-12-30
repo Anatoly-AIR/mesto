@@ -1,0 +1,11 @@
+.submit-button__text {
+  max-width: 109px;
+  max-height: 18px;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 400;
+  text-align: center;
+  color: #fff;
+  margin: 0;
+}

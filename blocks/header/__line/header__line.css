@@ -8,3 +8,9 @@
   border-color: #545454;
   padding-top: 41px;
 }
+
+@media screen and (max-width: 380px) {
+  .header__line {
+    padding-top: 31px;
+  }
+}

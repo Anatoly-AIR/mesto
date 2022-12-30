@@ -17,12 +17,94 @@
           <img class="profile__avatar" src="./images/image.jpg" alt="Фото Ж-И.Кусто">
           <div class="profile-info">
             <h1 class="profile-info__title">Жак-Ив Кусто</h1>
-            <img class="profile-info__edit-button" src="./images/Edit Button.svg" alt="Кнопка редактирования профиля">
+            <a href="">
+              <img class="profile-info__edit-button" src="./images/Edit Button.svg" alt="Кнопка редактирования профиля">
+            </a>
             <p class="profile-info__subtitle">Исследователь океана</p>
           </div>
-        </div>  
-        <img class="profile__add-button" src="./images/Add Button.svg" alt="Кнопка добавления профиля">
+        </div>
+        <a href="" class="add-button__link">
+          <div class="add-button">
+            <img class="add-button__plus" src="./images/Plus.svg" alt="Кнопка добавления профиля">
+          </div>
+          </a>
+        </section> <!--секция profile закрыта-->
+      <section class="elements">
+        <article class="element">
+          <img class="element__image" src="./images/Байкал.jpg" alt="Побережье Байкала">
+          <div class="element__container">
+            <h2 class="element__title">Байкал</h2>
+            <a href="" class="element__heart-link element__heart-link_activ">
+              <img class="element__heart" src="./images/Heart.svg" alt="Сердечко">
+            </a>
+          </div>
+        </article>
+        <article class="element">
+          <img class="element__image" src="./images/Домбай.jpg" alt="Вершина Домбая">
+          <div class="element__container">
+            <h2 class="element__title">Домбай</h2>
+            <a href="" class="element__heart-link element__heart-link_activ">
+              <img class="element__heart" src="./images/Heart.svg" alt="Сердечко">
+            </a>
+          </div>
+        </article>
+        <article class="element">
+          <img class="element__image" src="./images/Камчатка.jpg" alt="Камчатка">
+          <div class="element__container">
+            <h2 class="element__title">Камчатка</h2>
+            <a href="" class="element__heart-link element__heart-link_activ">
+              <img class="element__heart" src="./images/Heart.svg" alt="Сердечко">
+            </a>
+          </div>
+        </article>        
+        <article class="element">
+          <img class="element__image" src="./images/Карачаевск.jpg" alt="Крепость в горах">
+          <div class="element__container">
+            <h2 class="element__title">Карачаево-Черкесия</h2>
+            <a href="" class="element__heart-link element__heart-link_activ">
+              <img class="element__heart" src="./images/Heart.svg" alt="Сердечко">
+            </a>
+          </div>
+        </article>
+        <article class="element">
+          <img class="element__image" src="./images/Карелия.jpg" alt="Карелия">
+          <div class="element__container">
+            <h2 class="element__title">Карелия</h2>
+            <a href="" class="element__heart-link element__heart-link_activ">
+              <img class="element__heart" src="./images/Heart.svg" alt="Сердечко">
+            </a>
+          </div>
+        </article>
+        <article class="element">
+          <img class="element__image" src="./images/Эльбрус.jpg" alt="Эльбрус на горизонте">
+          <div class="element__container">
+            <h2 class="element__title">Эльбрус</h2>
+            <a href="" class="element__heart-link element__heart-link_activ">
+              <img class="element__heart" src="./images/Heart.svg" alt="Сердечко">
+            </a>
+          </div>
+        </article>
       </section>
     </main>
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
+    </footer>
+    <section class="popup">
+      <div class="popup__container">
+        <div class="popup__close">
+          <img class="popup__close-icon" src="./images/Close Icon.svg" alt="Кнопка закрытия попапа">
+        </div>
+        <div class="popup__content">
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <input type="text" class="popup__item">
+          <div class="popup__line"></div>
+          <input type="text" class="popup__item">
+          <div class="popup__line"></div>
+          <div class="submit-button">
+            <h3 class="submit-button__text">Сохранить</h3>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

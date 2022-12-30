@@ -1,0 +1,8 @@
+.popup__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 34px 36px 37px;
+  /*margin: auto;*/
+}

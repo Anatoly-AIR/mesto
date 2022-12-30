@@ -10,3 +10,10 @@
   padding-top: 22px;
 
 }
+
+@media screen and (max-width: 380px) {
+  .profile-info__title {
+    font-size: 27px;
+    line-height: 33px;
+  }
+}

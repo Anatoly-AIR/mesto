@@ -1,0 +1,11 @@
+.popup__item {
+  max-width: 358px;
+  border: 0;
+  padding: 24px 0 13px;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 400;
+  color: #000;
+  align-self: flex-start;
+}

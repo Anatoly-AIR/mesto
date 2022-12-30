@@ -1,0 +1,12 @@
+.popup__line {
+  height: 1px;
+  min-width: 358px;
+  background-color: #000;
+  opacity: .2;
+  /*align-self: center;*/
+  /*margin: 0 auto 30px;*/
+}
+
+.popup__line:nth-last-of-type(2) {
+  margin-bottom: 48px;
+}

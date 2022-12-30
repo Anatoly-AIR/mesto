@@ -1,0 +1,9 @@
+.element__heart-link {
+  max-width: 22px;
+  max-height: 29px;
+}
+
+.element__heart-link:hover {
+  opacity: .6;
+  transition: opacity .5s ease;
+}

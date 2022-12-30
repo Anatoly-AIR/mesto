@@ -1,0 +1,9 @@
+.submit-button {
+  min-width: 358px;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 0 18px;
+  border-radius: 2px;
+}
