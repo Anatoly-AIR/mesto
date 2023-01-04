@@ -6,4 +6,29 @@
   align-items: center;
   padding: 14px 0 18px;
   border-radius: 2px;
+  cursor: pointer;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 400;
+  text-align: center;
+  color: #fff;
+}
+
+.submit-button:hover {
+  opacity: .6;
+  transition: opacity .5s ease;
+}
+
+@media screen and (max-width: 470px) {
+  .submit-button {
+    min-width: 250px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .submit-button {
+    min-width: 238px;
+    padding: 14px 0 14px;
+  }
 }

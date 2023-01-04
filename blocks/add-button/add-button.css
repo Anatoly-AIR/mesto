@@ -12,5 +12,6 @@
   .add-button {
     min-width: 282px;
     box-sizing: border-box;
+    margin-top: 26px;
   }
 }

@@ -1,5 +1,6 @@
 .popup__item {
-  max-width: 358px;
+  /*max-width: 358px;*/
+  min-width: 358px;
   border: 0;
   padding: 24px 0 13px;
   font-family: 'Inter', 'Arial', sans-serif;
@@ -8,4 +9,19 @@
   font-weight: 400;
   color: #000;
   align-self: flex-start;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 470px) {
+  .popup__item {
+    min-width: 280px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .popup__item {
+    min-width: 238px;
+  }
 }

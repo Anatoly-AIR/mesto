@@ -4,9 +4,18 @@
   font-size: 24px;
   line-height: 29px;
   font-weight: 900;
-  /*text-align: center;*/
   align-self: flex-start;
   color: #000;
   padding-bottom: 22px;
   margin: 0;
+}
+
+@media screen and (max-width: 390px) {
+  .popup__title {
+    max-width: 238px;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 900;
+    padding-bottom: 47px;
+  }
 }

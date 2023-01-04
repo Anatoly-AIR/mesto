@@ -3,10 +3,20 @@
   min-width: 358px;
   background-color: #000;
   opacity: .2;
-  /*align-self: center;*/
-  /*margin: 0 auto 30px;*/
 }
 
-.popup__line:nth-last-of-type(2) {
+.popup__line:last-of-type {
   margin-bottom: 48px;
+}
+
+@media screen and (max-width: 470px) {
+  .popup__line {
+    min-width: 280px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .popup__line {
+    min-width: 238px;
+  }
 }

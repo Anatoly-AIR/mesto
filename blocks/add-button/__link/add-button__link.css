@@ -1,9 +1,0 @@
-.add-button__link {
-  min-width: 150px;
-  min-height: 50px;
-}
-
-.add-button__link:hover {
-  opacity: .6;
-  transition: opacity .5s ease;
-}

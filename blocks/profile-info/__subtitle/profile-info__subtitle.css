@@ -4,21 +4,20 @@
   font-size: 18px;
   line-height: 22px;
   font-weight: 400;
+  align-self: center;
   text-align: center;
   color: #fff;
   margin: 0;
-  padding-top: 16px;
+  padding: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-/*@media screen and (max-width: 680px) {
-  .profile-info__subtitle {
-    padding-bottom: 36px;
-  }
-}*/
-
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 390px) {
   .profile-info__subtitle {
     font-size: 14px;
     line-height: 17px;
+    padding-top: 8px;
   }
 }

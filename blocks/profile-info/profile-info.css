@@ -1,11 +1,20 @@
 .profile-info {
   max-width: 336px;
+  max-height: 73px;
+  /*min-width: 336px;*/
   display: flex;
   flex-wrap: wrap;
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 525px) {
   .profile-info {
     justify-content: center;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .profile-info {
+    max-width: 286px;
+    max-height: 54px;
   }
 }
