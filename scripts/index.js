@@ -14,7 +14,6 @@ function openPopup() {
 }
 
 function closePopup() {
-  //evt.preventDefault();
   popupElement.classList.remove('popup_opened');
 }
 
