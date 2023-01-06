@@ -4,7 +4,13 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  padding: 45px 0 36px;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 1px;
+  border-style: solid;
+  border-color: #545454;
+  padding: 45px 0 41px;
   box-sizing: border-box;
 }
 
@@ -16,12 +22,6 @@
 
 @media screen and (max-width: 525px) {
   .header {
-    padding: 28px 0 38px;
-  }
-}
-
-@media screen and (max-width: 380px) {
-  .header {
-    padding: 28px 0 38px;
+    padding: 28px 0 32px;
   }
 }
