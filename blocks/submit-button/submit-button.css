@@ -31,5 +31,7 @@
   .submit-button {
     min-width: 238px;
     padding: 14px 0 14px;
+    font-size: 14px;
+    line-height: 17px;
   }
 }

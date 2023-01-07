@@ -1,4 +1,4 @@
-.popup__container {
+.form__container {
   /*width: 100%;*/
   max-width: 430px;
   background: #fff;
@@ -9,13 +9,13 @@
 }
 
 @media screen and (max-width: 470px) {
-  .popup__container {
+  .form__container {
     max-width: 350px;
   }
 }
 
 @media screen and (max-width: 390px) {
-  .popup__container {
+  .form__container {
     max-width: 282px;
   }
 }

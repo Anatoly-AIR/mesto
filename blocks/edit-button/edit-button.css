@@ -2,7 +2,7 @@
   width: 24px;
   height: 24px;
   border: 1px solid #fff;
-  margin: 39px 0 0 18px;
+  margin: 34px 0 0 19px;
   background-color: #000;
   background-image: url(../../images/Edit-Button.svg);
   background-repeat: no-repeat;
@@ -20,7 +20,7 @@
   .edit-button {
     width: 18px;
     height: 18px;
-    margin: 34px 0 0 11px;
+    margin: 34px 0 0 2px;
     background-size: 7.5px;
   }
 }

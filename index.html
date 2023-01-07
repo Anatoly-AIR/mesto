@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./pages/index.css">
     <title>Место</title>
-  </head>  
+  </head>
   <body class="page">
     <header class="header">
       <img class="header__logo" src="./images/Vector.svg" alt="Логотип веб-страницы Место">
@@ -13,10 +13,12 @@
     <main class="content">
       <section class="profile">
         <div class="profile__container">
-          <img class="profile__avatar" src="./images/image.jpg" alt="Фото Ж-И.Кусто">
+          <img class="profile__avatar" src="./images/image.jpg" alt="Ж-И.Кусто в красной шапочке">
           <div class="profile-info">
-            <h1 class="profile-info__title">Жак-Ив Кусто</h1>
-            <button class="edit-button" type="button"></button>
+            <div class="profile-info__container">
+              <h1 class="profile-info__title">Жак-Ив Кусто</h1>
+              <button class="edit-button" type="button"></button>
+            </div>
             <p class="profile-info__subtitle">Исследователь океана</p>
           </div>
         </div>
@@ -43,7 +45,7 @@
             <h2 class="element__title">Камчатка</h2>
             <button class="heart heart_activ"></button>
           </div>
-        </article>        
+        </article>
         <article class="element">
           <img class="element__image" src="./images/Карачаевск.jpg" alt="Крепость в горах">
           <div class="element__container">
@@ -70,22 +72,15 @@
     <footer class="footer">
       <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
     </footer>
-    <div class="popup">
-      <div class="popup__container">
-        <button class="popup__close" type="button"></button>
-        <!--<a href="" class="link">
-          <div class="popup__close">
-            <img class="popup__close-icon" src="./images/Close-Icon.svg" alt="Кнопка закрытия попапа">
-          </div>
-        </a>-->
-        <div class="popup__content">
-          <h2 class="popup__title">Редактировать профиль</h2>
-          <input type="text" placeholder="Имя" class="popup__item popup__item_name">
-          <div class="popup__line"></div>
-          <input type="text" placeholder="Род занятий" class="popup__item popup__item_job">
-          <div class="popup__line"></div>
+    <div class="form">
+      <div class="form__container">
+        <button class="form__close" type="button"></button>
+        <form class="form__profile" name="form-profile" method="post">
+          <h2 class="form__title">Редактировать профиль</h2>
+          <input type="text" name="firstname" placeholder="Имя" class="form__item form__item_el_name">
+          <input type="text" name="job" placeholder="Род занятий" class="form__item form__item_el_job">
           <button class="submit-button">Сохранить</button>
-        </div>
+        </form>
       </div>
     </div>
     <script src="./scripts/index.js"></script>

@@ -1,0 +1,9 @@
+.profile-info__container {
+    display: flex;
+  }
+
+@media screen and (max-width: 390px) {
+  .profile-info__container {
+    max-width: 260px;
+  }
+}

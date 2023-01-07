@@ -9,6 +9,7 @@
   background-position: center;
   background-size: 22px;
   cursor: pointer;
+  justify-self: flex-end;
 }
 
 .add-button:hover {
