@@ -17,7 +17,7 @@
   transition: opacity .5s ease;
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 695px) {
   .add-button {
     min-width: 282px;
   }

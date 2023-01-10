@@ -2,9 +2,9 @@
   display: flex;
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 695px) {
   .profile__container {
-    margin-bottom: 36px;
+    margin-bottom: 33px;
   }
 }
 

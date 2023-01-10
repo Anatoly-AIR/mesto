@@ -9,7 +9,7 @@
   border-left: 0;
   border-bottom: 1px;
   border-style: solid;
-  border-color: #545454;
+  border-color: rgba(84, 84, 84, .7);
   padding: 45px 0 41px;
   box-sizing: border-box;
 }

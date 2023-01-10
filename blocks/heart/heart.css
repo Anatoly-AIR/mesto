@@ -1,6 +1,6 @@
 .heart {
-  width: 22px;
-  height: 19px;
+  min-width: 22px;
+  min-height: 19px;
   margin-top: 7px;
   padding: 0;
   border: none;

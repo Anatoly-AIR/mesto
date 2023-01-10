@@ -25,6 +25,5 @@
 @media screen and (max-width: 390px) {
   .form__item {
     min-width: 238px;
-    padding: 24px 0 13px;
   }
 }

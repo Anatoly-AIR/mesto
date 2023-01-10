@@ -1,6 +1,6 @@
 .profile-info__title {
-  /*max-width: 294px;*/
-  min-width: 294px;
+  max-width: 294px;
+  /*min-width: 294px;*/
   font-family: 'Inter', 'Arial', sans-serif;
   font-size: 42px;
   line-height: 48px;
@@ -16,16 +16,15 @@
 
 @media screen and (max-width: 525px) {
   .profile-info__title {
-    min-width: 270px;
     text-align: center;
   }
 }
 
 @media screen and (max-width: 390px) {
   .profile-info__title {
-    min-width: 200px;
+    max-width: 200px;
     font-size: 27px;
     line-height: 33px;
-    padding: 25px 0 0 22px;
+    padding: 25px 0 0 27px;
   }
 }
