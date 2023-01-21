@@ -6,6 +6,7 @@
   position: relative;
   border-radius: 10px;
   /*box-sizing: border-box;*/
+  display: none;
 }
 
 @media screen and (max-width: 470px) {
