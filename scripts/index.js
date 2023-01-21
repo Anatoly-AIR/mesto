@@ -22,6 +22,14 @@ function closePopup() {
   popupElement.classList.remove('popup_opened');
 }
 
+function openPopup() {
+  popupElement.classList.add('popup_opened');
+}
+
+function closePopup() {
+  popupElement.classList.remove('popup_opened');
+}
+
 function openFormEdit() {
   nameInput.value = profileInfoName.textContent;
   jobInput.value = profileInfoJob.textContent;
@@ -65,8 +73,6 @@ function handleFormAddSubmit(evt) {
   evt.preventDefault();
   closeFormAdd(evt);
 }
-
-
 
 formEditOpenButton.addEventListener('click', openFormEdit); //щелчок по кнопке редактирования профиля
 formEditCloseButton.addEventListener('click', closeFormEdit); //щелчок по кнопке закрытия окна редактирования профиля
