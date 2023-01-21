@@ -72,14 +72,23 @@
     <footer class="footer">
       <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
     </footer>
-    <div class="form">
-      <div class="form__container">
-        <button class="form__close" type="button"></button>
-        <form class="form__profile" name="form-profile" method="post">
+    <div class="popup">
+      <div class="form__container form__container_el_edit">
+        <button class="form__close form__close_el_edit" type="button"></button>
+        <form class="form__edit" name="form-edit" method="post">
           <h2 class="form__title">Редактировать профиль</h2>
           <input type="text" name="firstname" placeholder="Имя" class="form__item form__item_el_name">
           <input type="text" name="job" placeholder="Род занятий" class="form__item form__item_el_job">
           <button class="submit-button" type="submit">Сохранить</button>
+        </form>
+      </div>
+      <div class="form__container form__container_el_add">
+        <button class="form__close form__close_el_add" type="button"></button>
+        <form class="form__add" name="form-add" method="post">
+          <h2 class="form__title">Новое место</h2>
+          <input type="text" name="title" placeholder="Название" class="form__item form__item_el_title">
+          <input type="text" name="link" placeholder="Ссылка на картинку" class="form__item form__item_el_link">
+          <button class="submit-button" type="submit">Создать</button>
         </form>
       </div>
     </div>
