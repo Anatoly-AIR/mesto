@@ -37,7 +37,6 @@ const formContainerAdd = popupElement.querySelector('.form__container_el_add');
 const formContainerImage = popupElement.querySelector('.form__container_el_image');
 const imageCloseButton = popupElement.querySelector('.form__close_el_image');
 const elementImage = elementTemplate.querySelector('.element__image');
-//const trashIcon = elementTemplate.querySelector('.trash-icon');
 const trashButton = document.querySelector('.trash-button');
 const profileInfoName = document.querySelector('.profile-info__title');
 const profileInfoJob = document.querySelector('.profile-info__subtitle');
@@ -45,7 +44,7 @@ const nameInput = document.querySelector('.form__item_el_name');
 const jobInput = document.querySelector('.form__item_el_job');
 const titleImage = document.querySelector('.form__item_el_title');
 const linkImage = document.querySelector('.form__item_el_link');
-//const heartActiv = document.querySelector('.heart');
+const heartButton = document.querySelector('.heart-button');
 
 function initCardDefault() {
   initialCards.forEach(function(item) {
@@ -53,12 +52,8 @@ function initCardDefault() {
     element.querySelector('.element__image').src = item.link;
     element.querySelector('.element__title').textContent = item.name;
     elements.prepend(element);
-
-    const trashButton = document.querySelector('.trash-button');
-    trashButton.addEventListener('click', function() {
-    const element = trashButton.closest('.element');
-    element.remove();
-    });
+    addCardTrash();
+    addCardLike();
   });
 }
 
@@ -69,6 +64,22 @@ function addCardManual(name, link) {
   element.querySelector('.element__image').src = link;
   element.querySelector('.element__title').textContent = name;
   elements.prepend(element);
+  addCardTrash();
+}
+
+function addCardTrash() {
+  const trashButton = document.querySelector('.trash-button');
+  trashButton.addEventListener('click', function() {
+  const element = trashButton.closest('.element');
+  element.remove();
+  });
+}
+
+function addCardLike () {
+  const heartButton = document.querySelector('.heart-button');
+  heartButton.addEventListener('click', function() {
+    heartButton.classList.toggle('heart-button_activ');
+  })
 }
 
 function openPopup() {
@@ -146,12 +157,6 @@ elementImage.addEventListener('click', openFormImage);
 imageCloseButton.addEventListener('click', closeFormImage);
 formContainerEdit.addEventListener('submit', handleFormEditSubmit); //щелчок по кнопке "Сохранить"
 formContainerAdd.addEventListener('submit', handleFormAddSubmit);
-/*const trashButton = document.querySelector('.trash-button');
-  trashButton.addEventListener('click', function() {
-    const element = trashButton.closest('.element');
-    element.remove();
-    console.log('element deleted');
-  });*/
 
 //nameInput.addEventListener('click', clickNameInput); //щелчок по полю ввода "Имя"
 //jobInput.addEventListener('click', clickJobInput);   //щелчок по полю ввода "Род занятий"

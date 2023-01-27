@@ -1,18 +1,13 @@
-.heart {
+.heart-button_activ {
   min-width: 22px;
   min-height: 19px;
   margin-top: 7px;
   padding: 0;
   border: none;
-  background-color: #fff;
-  background-image: url(../../../images/Heart.svg);
+  /*background-color: #fff;*/
+  background-image: url(../../../images/Heart-activ.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 22px;
   cursor: pointer;
-}
-
-.heart:hover {
-  opacity: .5;
-  transition: opacity .5s ease;
 }
