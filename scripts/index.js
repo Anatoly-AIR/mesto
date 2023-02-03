@@ -48,22 +48,22 @@ initialCards.forEach(function(item) {  //выводим карточки на с
 });
 
 function addCard(name, link) {
-  const element = elementTemplate.querySelector('.element').cloneNode(true);
+  const element = elementTemplate.querySelector('.element').cloneNode(true);//добавляем карточку
   element.querySelector('.element__image').src = link;
   element.querySelector('.element__title').textContent = name;
   elements.prepend(element);
   //elements.append(element);
-  const heartButton = element.querySelector('.heart-button');
+  const heartButton = element.querySelector('.heart-button');//ставим лайк карточке
   heartButton.addEventListener('click', function(evt) {
     evt.target.classList.toggle('heart-button_activ');
     console.log(evt.target);
   });
-  const trashButton = element.querySelector('.trash-button');
+  const trashButton = element.querySelector('.trash-button');//удаляем карточку
   trashButton.addEventListener('click', function() {
     const element = trashButton.closest('.element');
     element.remove();
   });
-  const elementImage = element.querySelector('.element__image');
+  const elementImage = element.querySelector('.element__image');//открываем большую фотографию карточки
   elementImage.addEventListener('click', function() {
     const formContainerImage = popupElement.querySelector('.form__container_el_image');
     const bigImage = popupElement.querySelector('.big-image');
@@ -131,10 +131,10 @@ function handleFormAddSubmit(evt) {
   closeFormAdd(evt);
 }
 
-formEditOpenButton.addEventListener('click', openFormEdit); //щелчок по кнопке редактирования профиля
-formEditCloseButton.addEventListener('click', closeFormEdit); //щелчок по кнопке закрытия окна редактирования профиля
-formAddOpenButton.addEventListener('click', openFormAdd);
-formAddCloseButton.addEventListener('click', closeFormAdd);
-imageCloseButton.addEventListener('click', closeFormImage);
-formContainerEdit.addEventListener('submit', handleFormEditSubmit); //щелчок по кнопке "Сохранить"
-formContainerAdd.addEventListener('submit', handleFormAddSubmit);
+formEditOpenButton.addEventListener('click', openFormEdit);   //клик по кнопке редактирования профиля
+formEditCloseButton.addEventListener('click', closeFormEdit); //клик по кнопке закрытия окна редактирования профиля
+formAddOpenButton.addEventListener('click', openFormAdd);     //клик по кнопке добавления карточки
+formAddCloseButton.addEventListener('click', closeFormAdd);   //клик по кнопке закрытия окна добавления карточки
+imageCloseButton.addEventListener('click', closeFormImage);   //клик по кнопке закрытия большого изображения
+formContainerEdit.addEventListener('submit', handleFormEditSubmit); //клик по кнопке "Сохранить" в окне редактирования профиля
+formContainerAdd.addEventListener('submit', handleFormAddSubmit);   //клик по кнопке "Создать" в окне добавления карточки

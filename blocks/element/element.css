@@ -1,8 +1,7 @@
 .element {
-  /*max-width: 100%;*/
   max-width: 282px;
   /*max-height: 282px;*/
   border-radius: 10px;
   background-color: #fff;
-  position: relative;  /*для изображения корзины*/ 
+  position: relative;  /*для изображения корзины*/
 }
