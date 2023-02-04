@@ -27,17 +27,17 @@ const initialCards = [
 
 const elements = document.querySelector('.elements');
 const elementTemplate = document.querySelector('#element-template').content;
-const popupElement = document.querySelector('.popup');
-const formContainer = popupElement.querySelector('.form__container');
+const formElement = document.querySelector('.form');
+const formContainer = formElement.querySelector('.form__container');
 const formAdd = formContainer.querySelector('.form__add');
 const formEditOpenButton = document.querySelector('.edit-button');
-const formEditCloseButton = popupElement.querySelector('.form__close_el_edit');
+const formEditCloseButton = formElement.querySelector('.form__close_el_edit');
 const formAddOpenButton = document.querySelector('.add-button');
-const formAddCloseButton = popupElement.querySelector('.form__close_el_add');
-const formContainerEdit = popupElement.querySelector('.form__container_el_edit');
-const formContainerAdd = popupElement.querySelector('.form__container_el_add');
-const formContainerImage = popupElement.querySelector('.form__container_el_image');
-const imageCloseButton = popupElement.querySelector('.form__close_el_image');
+const formAddCloseButton = formElement.querySelector('.form__close_el_add');
+const formContainerEdit = formElement.querySelector('.form__container_el_edit');
+const formContainerAdd = formElement.querySelector('.form__container_el_add');
+const formContainerImage = formElement.querySelector('.form__container_el_image');
+const imageCloseButton = formElement.querySelector('.form__close_el_image');
 const profileInfoName = document.querySelector('.profile-info__title');
 const profileInfoJob = document.querySelector('.profile-info__subtitle');
 const nameInput = document.querySelector('.form__item_el_name');
@@ -65,10 +65,10 @@ function addCard(name, link) {
   });
   const elementImage = element.querySelector('.element__image');//открываем большую фотографию карточки
   elementImage.addEventListener('click', function() {
-    const formContainerImage = popupElement.querySelector('.form__container_el_image');
-    const bigImage = popupElement.querySelector('.big-image');
-    const bigImageCaption = popupElement.querySelector('.big-image__caption');
-    openPopup();
+    const formContainerImage = formElement.querySelector('.form__container_el_image');
+    const bigImage = formElement.querySelector('.big-image__here');
+    const bigImageCaption = formElement.querySelector('.big-image__caption');
+    openForm();
     formContainerEdit.classList.remove('form__container_opened');
     formContainerAdd.classList.remove('form__container_opened');
     formContainerImage.classList.add('form__container_opened');
@@ -77,40 +77,40 @@ function addCard(name, link) {
   });
 }
 
-function openPopup() {
-  popupElement.classList.add('popup_opened');
+function openForm() {
+  formElement.classList.add('form_opened');
 }
 
-function closePopup() {
-  popupElement.classList.remove('popup_opened');
+function closeForm() {
+  formElement.classList.remove('form_opened');
 }
 
 function openFormEdit() {
   nameInput.value = profileInfoName.textContent;
   jobInput.value = profileInfoJob.textContent;
-  openPopup();
+  openForm();
   formContainerAdd.classList.remove('form__container_opened');
   formContainerImage.classList.remove('form__container_opened');
   formContainerEdit.classList.add('form__container_opened');
 }
 
 function closeFormEdit() {
-  closePopup();
+  closeForm();
 }
 
 function openFormAdd() {
-  openPopup();
+  openForm();
   formContainerEdit.classList.remove('form__container_opened');
   formContainerImage.classList.remove('form__container_opened');
   formContainerAdd.classList.add('form__container_opened');
 }
 
 function closeFormAdd() {
-  closePopup();
+  closeForm();
 }
 
 function closeFormImage() {
-  closePopup();
+  closeForm();
 }
 
 function handleFormEditSubmit(evt) {
@@ -121,7 +121,7 @@ function handleFormEditSubmit(evt) {
 }
 
 function handleFormAddSubmit(evt) {
-  const formContainerAdd = popupElement.querySelector('.form__container_el_add');
+  const formContainerAdd = formElement.querySelector('.form__container_el_add');
   const titleImage = formContainerAdd.querySelector('.form__item_el_title');
   const linkImage = formContainerAdd.querySelector('.form__item_el_link');
   evt.preventDefault();
