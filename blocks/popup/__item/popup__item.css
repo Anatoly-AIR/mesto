@@ -1,4 +1,4 @@
-.form__item {
+.popup__item {
   min-width: 358px;
   border: 0;
   border-bottom: 1px solid rgba(0, 0, 0, .2);
@@ -12,18 +12,18 @@
   box-sizing: border-box;
 }
 
-.form__item:last-of-type {
+.popup__item:last-of-type {
   margin-bottom: 48px;
 }
 
 @media screen and (max-width: 470px) {
-  .form__item {
+  .popup__item {
     min-width: 280px;
   }
 }
 
 @media screen and (max-width: 390px) {
-  .form__item {
+  .popup__item {
     min-width: 238px;
   }
 }
