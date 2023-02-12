@@ -19,9 +19,8 @@ const nameInput = document.querySelector(".popup__item_el_name");
 const jobInput = document.querySelector(".popup__item_el_job");
 const popupImageSource = popupImageContainer.querySelector(".popup__image-source");
 const popupImageCaption = popupImageContainer.querySelector(".popup__image-caption");
-const popupFormCard = popupCard.querySelector(".popup__add");
-const titleImage = popupFormCard.querySelector(".popup__item_el_title");
-const linkImage = popupFormCard.querySelector(".popup__item_el_link");
+const titleImage = formAddCard.querySelector(".popup__item_el_title");
+const linkImage = formAddCard.querySelector(".popup__item_el_link");
 
 //выводим карточки на страницу при загрузке
 initialCards.forEach(function (item) {
