@@ -15,12 +15,12 @@ const formEditProfile = popupProfile.querySelector(".form__edit");
 const formAddCard = popupCard.querySelector(".form__add");
 const profileInfoName = document.querySelector(".profile-info__title");
 const profileInfoJob = document.querySelector(".profile-info__subtitle");
-const nameInput = document.querySelector(".form__item_el_name");
-const jobInput = document.querySelector(".form__item_el_job");
+const nameInput = document.querySelector(".form__input_el_name");
+const jobInput = document.querySelector(".form__input_el_job");
 const popupImageSource = popupImageContainer.querySelector(".popup__image-source");
 const popupImageCaption = popupImageContainer.querySelector(".popup__image-caption");
-const titleImage = formAddCard.querySelector(".form__item_el_title");
-const linkImage = formAddCard.querySelector(".form__item_el_link");
+const titleImage = formAddCard.querySelector(".form__input_el_title");
+const linkImage = formAddCard.querySelector(".form__input_el_link");
 
 //выводим карточки на страницу при загрузке
 initialCards.forEach(function (item) {
@@ -69,8 +69,8 @@ function closePopup(popup) {
 }
 
 function openPopupEdit() {
-  nameInput.value = profileInfoName.textContent;
-  jobInput.value = profileInfoJob.textContent;
+  //nameInput.value = profileInfoName.textContent;
+  //jobInput.value = profileInfoJob.textContent;
   openPopup(popupProfile);
 }
 
