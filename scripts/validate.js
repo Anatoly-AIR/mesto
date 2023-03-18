@@ -1,5 +1,5 @@
-const form = document.querySelector(".form");
-const formInput = form.querySelector(".form__input");
+const form = document.querySelector(".popup__form");
+const formInput = form.querySelector(".popup__input");
 const formError = form.querySelector(`.${formInput.id}-error`);
 
 function showInputError (formElement, inputElement, errorMessage, config) {
@@ -61,10 +61,10 @@ function enableValidation (config) {
 }
 
 enableValidation({
-  formSelector: '.form',
-  inputSelector: '.form__input',
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
   submitButtonSelector: '.submit-button',
   inactivButtonClass: 'submit-button_inactive',
-  inputErrorClass: 'form__input_type_error',
-  errorClass: 'form__input-error_activ'
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__input-error_activ'
 });
