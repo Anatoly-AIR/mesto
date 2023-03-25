@@ -21,8 +21,11 @@ const popupImageSource = popupImageContainer.querySelector(".popup__image-source
 const popupImageCaption = popupImageContainer.querySelector(".popup__image-caption");
 const titleImage = formAddCard.querySelector(".popup__input_el_title");
 const linkImage = formAddCard.querySelector(".popup__input_el_link");
+//const submitButton = document.querySelector(".submit-button");
 const popupContainer = document.querySelector(".popup__container");
 const popupList = Array.from(document.querySelectorAll('.popup'));
+const buttonElement = formAddCard.querySelector('.submit-button');
+const submitButtonInactive = formAddCard.querySelector('.submit-button_inactive')
 
 //выводим карточки на страницу при загрузке
 initialCards.forEach(function (item) {
@@ -84,6 +87,8 @@ function closePopupEdit() {
 
 function openPopupCreateCard() {
   openPopup(popupCard);
+  buttonElement.classList.add('submit-button_inactive');
+  buttonElement.setAttribute('disabled', true);
 }
 
 function closePopupCreateCard() {
@@ -107,8 +112,8 @@ function handleCreateCardSubmit(evt) {
   const imgLink = linkImage.value;
   const card = createCard(imgName, imgLink);
   cardsContainer.prepend(card);
-  titleImage.value = "";
-  linkImage.value = "";
+  console.log(titleImage.value, linkImage.value);
+  evt.target.reset();
   closePopupCreateCard();
 }
 
