@@ -2,8 +2,8 @@ const profile = document.querySelector(".profile");
 const popupEditButton = profile.querySelector(".edit-button");
 const popupCreateCardButton = profile.querySelector(".add-button");
 const cardsContainer = document.querySelector(".elements");
-const cardTemplate = document.querySelector("#element-template").content;
-const cardElement = cardTemplate.querySelector(".element");
+//const cardTemplate = document.querySelector("#element-template").content;
+//const cardElement = cardTemplate.querySelector(".element");
 const popupProfile = document.querySelector(".popup_type_profile");
 const popupCard = document.querySelector(".popup_type_card");
 const popupImage = document.querySelector(".popup_type_image");
@@ -17,18 +17,18 @@ const profileInfoName = document.querySelector(".profile-info__title");
 const profileInfoJob = document.querySelector(".profile-info__subtitle");
 const nameInput = document.querySelector(".popup__input_el_name");
 const jobInput = document.querySelector(".popup__input_el_job");
-const popupImageSource = popupImageContainer.querySelector(".popup__image-source");
-const popupImageCaption = popupImageContainer.querySelector(".popup__image-caption");
+//const popupImageSource = popupImageContainer.querySelector(".popup__image-source");
+//const popupImageCaption = popupImageContainer.querySelector(".popup__image-caption");
 const titleImage = formAddCard.querySelector(".popup__input_el_title");
 const linkImage = formAddCard.querySelector(".popup__input_el_link");
 //const submitButton = document.querySelector(".submit-button");
-const popupContainer = document.querySelector(".popup__container");
+//const popupContainer = document.querySelector(".popup__container");
 const popupList = Array.from(document.querySelectorAll('.popup'));
 const buttonElement = formAddCard.querySelector('.submit-button');
 const submitButtonInactive = formAddCard.querySelector('.submit-button_inactive')
 
 //выводим карточки на страницу при загрузке
-initialCards.forEach(function (item) {
+/*initialCards.forEach(function (item) {
   const card = createCard(item.name, item.link);
   cardsContainer.prepend(card);
 });
@@ -63,9 +63,9 @@ function createCard(name, link) {
   });
 
   return cardElement;
-}
+}*/
 
-function openPopup(popup) {
+export function openPopup(popup) {
   popup.classList.add("popup_opened");
   document.addEventListener("keydown", closePopupEscape);
 }
