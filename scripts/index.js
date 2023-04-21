@@ -43,8 +43,9 @@ const popupImageContainer = popupImage.querySelector(".popup__image-container");
 const popupCloseTypeProfile = popupProfile.querySelector(".popup__close_type_profile");
 const popupCloseTypeCard = popupCard.querySelector(".popup__close_type_card");
 const popupCloseTypeImg = popupImage.querySelector(".popup__close_type_img");
-const popupOpenBigImage = document.querySelector(".element");
-console.log(popupOpenBigImage);
+//const popupOpenBigImage = document.querySelector(".element");
+const elementImage = document.querySelector(".element__image");
+console.log(elementImage);
 
 const formEditProfile = popupProfile.querySelector(".popup__form_type_edit");
 const formAddCard = popupCard.querySelector(".popup__form_type_add");
@@ -89,7 +90,6 @@ function closePopupCreateCard() {
 }
 
 function openBigImage(data) {
-  //const popupOpenBigImage = document.querySelector(".element");
   openPopup(popupImage);
   popupImageSource.src = data.link;
   popupImageSource.alt = data.name;
@@ -157,6 +157,7 @@ popupCloseTypeProfile.addEventListener("click", closePopupEdit); //клик по
 popupCreateCardButton.addEventListener("click", openPopupCreateCard); //клик по кнопке добавления карточки
 popupCloseTypeCard.addEventListener("click", closePopupCreateCard); //клик по кнопке закрытия окна добавления карточки
 //popupOpenBigImage.addEventListener("click", openBigImage);
+elementImage.addEventListener("click", openBigImage);
 popupImage.addEventListener("click", openBigImage);
 popupCloseTypeImg.addEventListener("click", closePopupImage); //клик по кнопке закрытия большого изображения
 formEditProfile.addEventListener("submit", handleEditProfileSubmit); //клик по кнопке "Сохранить" в окне редактирования профиля
