@@ -1,4 +1,4 @@
-const config = {
+export const config = {
   formSelector: '.popup__form',
   inputSelector: '.popup__input',
   submitButtonSelector: '.submit-button',
@@ -7,43 +7,50 @@ const config = {
   errorClass: 'popup__input-error_activ'
 }
 
-class FormValidator {
+export class FormValidator {
   constructor(config, formElement) {
     this._config = config;
     this._formElement = formElement;
+    //this._formElement = document.querySelector(formElement);
+    this._inputList = Array.from(document.querySelectorAll(config.inputSelector));
+    this._buttonElement = document.querySelector(config.submitButtonSelector);
   }
 
-  _showInputError (formElement, inputElement, errorMessage, config) {
-  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
+  _showInputError (inputElement, errorMessage) {
+  const errorElement = document.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.add(this._config.inputErrorClass);
   errorElement.textContent = errorMessage;
   errorElement.classList.add(this._config.errorClass);
 }
 
-  _hideInputError (formElement, inputElement, config) {
-    const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
+  _hideInputError (inputElement) {
+    const errorElement = document.querySelector(`.${inputElement.id}-error`);
     inputElement.classList.remove(this._config.inputErrorClass);
     errorElement.classList.remove(this._config.errorClass);
     errorElement.textContent = '';
   }
 
-  _checkInputValidity (formElement, inputElement, config) {
+  _checkInputValidity (inputElement) {
     if (!inputElement.validity.valid) {
-      this._showInputError (formElement, inputElement, inputElement.validationMessage, config);
+      this._showInputError (inputElement, inputElement.validationMessage);
     }else {
-      this._hideInputError (formElement, inputElement, config);
+      this._hideInputError (inputElement);
     }
   }
 
-  _hasInvalidInput (inputList) {
-    return inputList.some((inputElement) => {
+
+
+  //_hasInvalidInput (inputList) {
+  _hasInvalidInput () {
+    return this._inputList.some((inputElement) => {
       return !inputElement.validity.valid;
-    })
+    });
   }
 
-  _toggleButtonState (inputList, buttonElement, config) {
-    if (this._hasInvalidInput(inputList)) {
-      buttonElement.classList.add(this._config.inactivButtonClass);
+  _toggleButtonState (inputList, buttonElement) {
+  //_toggleButtonState (buttonElement) {
+    if (this._hasInvalidInput(this._inputList)) {
+      buttonElement.classList.add(config.inactivButtonClass);
       buttonElement.setAttribute('disabled', true);
     } else {
       buttonElement.classList.remove(this._config.inactivButtonClass);
@@ -51,28 +58,23 @@ class FormValidator {
     }
   }
 
-  _setEventListeners (formElement, config) {
-    const inputList = Array.from(formElement.querySelectorAll(this._config.inputSelector));
-    const buttonElement = formElement.querySelector(this._config.submitButtonSelector);
-    this._toggleButtonState(inputList, buttonElement, config);
-    inputList.forEach((inputElement) => {
+  _setEventListeners () {
+    //this._toggleButtonState(this._inputList, this._buttonElement);
+    this._inputList.forEach((inputElement) => {
       inputElement.addEventListener('input', () => {
-        this._toggleButtonState(inputList, buttonElement, config);
-        this._checkInputValidity(formElement, inputElement, config);
+        //this._toggleButtonState(this._inputList, this._buttonElement);
+        this._checkInputValidity(inputElement);
+        //this._toggleButtonState(this._inputList, this._buttonElement);
       });
     });
   }
 
-  enableValidation (config) {
+  enableValidation () {
     const formElement = document.querySelector(this._formElement);
     formElement.addEventListener("submit", (evt) => {
       evt.preventDefault();
     });
-    this._setEventListeners(formElement, config );
+    //this._setEventListeners(formElement, config );
+    this._setEventListeners ();
   }
 }
-
-const profileFormValidator = new FormValidator(config, ".popup__form_type_edit");
-profileFormValidator.enableValidation(config);
-const cardFormValidator = new FormValidator(config, ".popup__form_type_add");
-cardFormValidator.enableValidation(config);
