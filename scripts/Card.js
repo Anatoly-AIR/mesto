@@ -1,19 +1,21 @@
-const popup = document.querySelector(".popup_type_image");
-const popupImageSource = document.querySelector(".popup__image-source");
-const popupImageCaption = document.querySelector(".popup__image-caption");
-
-//import { openPopup } from './index.js';
+import { openPopup } from './utils.js'
 
 export class Card {
   constructor(data, templateSelector) {
     this._name = data.name;
     this._link = data.link;
     this._templateSelector = templateSelector;
+    this._popup = document.querySelector(".popup_type_image");
+    this._popupImageSource = this._popup.querySelector(".popup__image-source");
+    this._popupImageCaption = this._popup.querySelector(".popup__image-caption");
   }
 
   _getTemplate() {
-    const cardElement = document.querySelector(this._templateSelector).content.querySelector(".element").cloneNode(true);
-    return cardElement;
+    return document
+      .querySelector(this._templateSelector)
+      .content
+      .querySelector(".element")
+      .cloneNode(true);
   }
 
   _setEventListeners() {
@@ -25,9 +27,9 @@ export class Card {
       this._deleteCard();
     });
 
-    /*this._cardElement.querySelector(".element__image").addEventListener("click", () => {
-      this._openBigImage();
-    });*/
+    this._cardElement.querySelector(".element__image").addEventListener("click", () => {
+      this._handlePreviewPicture();
+    });
   }
 
   _likeCard() {
@@ -35,17 +37,16 @@ export class Card {
   }
 
   _deleteCard() {
-    this._cardElement.querySelector(".trash-button").closest(".element");
+    this._cardElement.closest(".element");
     this._cardElement.remove();
   }
 
-  /*_openBigImage() {
-    this._cardElement.querySelector(".element__image");
-    openPopup(popup);
-    popupImageSource.src = this._link;
-    popupImageSource.alt = this._name;
-    popupImageCaption.textContent = this._name;
-  }*/
+  _handlePreviewPicture() {
+    openPopup(this._popup);
+    this._popupImageSource.src = this._link;
+    this._popupImageSource.alt = this._name;
+    this._popupImageCaption.textContent = this._name;
+  }
 
   createCard() {
     this._cardElement = this._getTemplate();
