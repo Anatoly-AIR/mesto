@@ -61,7 +61,7 @@ function closePopupEdit() {
 
 function openPopupCreateCard() {
   openPopup(popupCard);
-  //cardFormValidator.enableValidation();
+  cardFormValidator.enableValidation();
 }
 
 function closePopupCreateCard() {
@@ -112,13 +112,10 @@ initialCards.forEach((item) => {
   getCardElement(item);
 });
 
-//const profileFormValidator = new FormValidator(config, ".popup__form_type_edit");
 const profileFormValidator = new FormValidator(config, formEditProfile);
 profileFormValidator.enableValidation();
 
-//const cardFormValidator = new FormValidator(config, ".popup__form_type_add");
 const cardFormValidator = new FormValidator(config, formAddCard);
-cardFormValidator.enableValidation();
 
 popupEditButton.addEventListener("click", openPopupEdit); //клик по кнопке редактирования профиля
 popupCloseTypeProfile.addEventListener("click", closePopupEdit); //клик по кнопке закрытия окна редактирования профиля
