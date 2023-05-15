@@ -61,7 +61,7 @@ function closePopupEdit() {
 
 function openPopupCreateCard() {
   openPopup(popupCard);
-  cardFormValidator.enableValidation();
+  //cardFormValidator.disableSubmitButton();
 }
 
 function closePopupCreateCard() {
@@ -116,6 +116,7 @@ const profileFormValidator = new FormValidator(config, formEditProfile);
 profileFormValidator.enableValidation();
 
 const cardFormValidator = new FormValidator(config, formAddCard);
+cardFormValidator.enableValidation();
 
 popupEditButton.addEventListener("click", openPopupEdit); //клик по кнопке редактирования профиля
 popupCloseTypeProfile.addEventListener("click", closePopupEdit); //клик по кнопке закрытия окна редактирования профиля
