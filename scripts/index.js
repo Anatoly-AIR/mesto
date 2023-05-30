@@ -1,7 +1,8 @@
 import {Card} from "./Card.js";
 import {FormValidator, config} from "./FormValidator.js"
 import {Section} from "./Section.js";
-import { initialCards, openPopup, closePopup } from "./utils.js";
+import { initialCards } from "./utils.js";
+import { Popup } from "./Popup.js";
 
 const profile = document.querySelector(".profile");
 const popupEditButton = profile.querySelector(".edit-button");
@@ -22,6 +23,13 @@ const jobInput = document.querySelector(".popup__input_el_job");
 const titleImage = formAddCard.querySelector(".popup__input_el_title");
 const linkImage = formAddCard.querySelector(".popup__input_el_link");
 const popupList = Array.from(document.querySelectorAll('.popup'));
+
+const popupElement = new Popup (
+  //'.popup_type_profile'
+  '.popup'
+)
+
+popupElement.setEventListeners();
 
 function openPopupEdit() {
   nameInput.value = profileInfoName.textContent;
@@ -92,7 +100,7 @@ function closePopupOverlay () {
   });
 }
 
-closePopupOverlay ();
+//closePopupOverlay ();
 
 /*initialCards.forEach((item) => {
   getCardElement(item);
@@ -117,8 +125,8 @@ profileFormValidator.enableValidation();
 const cardFormValidator = new FormValidator(config, formAddCard);
 cardFormValidator.enableValidation();
 
-popupEditButton.addEventListener("click", openPopupEdit); //клик по кнопке редактирования профиля
-popupCloseTypeProfile.addEventListener("click", closePopupEdit); //клик по кнопке закрытия окна редактирования профиля
+//popupEditButton.addEventListener("click", openPopupEdit); //клик по кнопке редактирования профиля
+//popupCloseTypeProfile.addEventListener("click", closePopupEdit); //клик по кнопке закрытия окна редактирования профиля
 popupCreateCardButton.addEventListener("click", openPopupCreateCard); //клик по кнопке добавления карточки
 popupCloseTypeCard.addEventListener("click", closePopupCreateCard); //клик по кнопке закрытия окна добавления карточки
 popupCloseTypeImg.addEventListener("click", closePopupImage); //клик по кнопке закрытия большого изображения

@@ -28,6 +28,8 @@ export const initialCards = [
 export const popup = document.querySelector(".popup_type_image");
 export const popupImageSource = popup.querySelector(".popup__image-source");
 export const popupImageCaption = popup.querySelector(".popup__image-caption");
+export const profile = document.querySelector(".profile");
+export const popupEditButton = profile.querySelector(".edit-button");
 
 export function openPopup(popup) {
   popup.classList.add("popup_opened");
