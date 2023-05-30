@@ -1,33 +1,7 @@
 import {Card} from "./Card.js";
 import {FormValidator, config} from "./FormValidator.js"
-import { openPopup, closePopup } from "./utils.js";
-
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
+import {Section} from "./Section.js";
+import { initialCards, openPopup, closePopup } from "./utils.js";
 
 const profile = document.querySelector(".profile");
 const popupEditButton = profile.querySelector(".edit-button");
@@ -79,11 +53,11 @@ function handleEditProfileSubmit(evt) {
   closePopupEdit(evt);
 }
 
-function getCardElement(data) {
+/*function getCardElement(data) {
   const card = new Card(data, "#element-template");
   const cardElement = card.createCard();
   cardsContainer.prepend(cardElement);
-}
+}*/
 
 function handleCreateCardSubmit(evt) {
   evt.preventDefault();
@@ -91,7 +65,19 @@ function handleCreateCardSubmit(evt) {
     name: titleImage.value,
     link: linkImage.value
   }
-  getCardElement(data);
+  const cardElement = new Section({
+    items: initialCards,
+    renderer: (item) => {
+      const card = new Card(item, "#element-template");
+      const cardElement = card.createCard();
+      cardList.addItem(cardElement);
+    },
+   },
+   '.elements'
+  );
+
+  cardElement.renderer(data);
+  //getCardElement(data);
   evt.target.reset();
   closePopupCreateCard();
 }
@@ -108,9 +94,22 @@ function closePopupOverlay () {
 
 closePopupOverlay ();
 
-initialCards.forEach((item) => {
+/*initialCards.forEach((item) => {
   getCardElement(item);
-});
+});*/
+
+const cardList = new Section({
+                 items: initialCards,
+                 renderer: (item) => {
+                   const card = new Card(item, "#element-template");
+                   const cardElement = card.createCard();
+                   cardList.addItem(cardElement);
+                 },
+                },
+                '.elements'
+);
+
+cardList.renderItems();
 
 const profileFormValidator = new FormValidator(config, formEditProfile);
 profileFormValidator.enableValidation();
