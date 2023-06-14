@@ -1,9 +1,13 @@
-import { popup, popupImageSource, popupImageCaption, openPopup } from './utils.js'
+import { popupImageSource, popupImageCaption, initialCards } from '../scripts/utils.js';
+import { Popup } from '../scripts/Popup.js';
+import { PopupWithImage } from '../scripts/PopupWithImage.js';
+//import { data } from 'autoprefixer';
 
 export class Card {
-  constructor(data, templateSelector) {
+  constructor({data, handleCardClick}, templateSelector) {
     this._name = data.name;
     this._link = data.link;
+    this._handleCardClick = handleCardClick;
     this._templateSelector = templateSelector;
   }
 
@@ -25,7 +29,8 @@ export class Card {
     });
 
     this._cardElement.querySelector(".element__image").addEventListener("click", () => {
-      this._handlePreviewPicture();
+      //this._handleCardClick(this._name, this._link );
+      this._handleCardClick();
     });
   }
 
@@ -37,20 +42,23 @@ export class Card {
     this._cardElement.remove();
   }
 
-  _handlePreviewPicture() {
-    openPopup(popup);
+  /*handleCardClick() {
+    const imagePopup = new PopupWithImage('.popup_type_image');
+    imagePopup.open();
     popupImageSource.src = this._link;
     popupImageSource.alt = this._name;
     popupImageCaption.textContent = this._name;
-  }
+
+    this._handleCardClick();
+  }*/
 
   createCard() {
     this._cardElement = this._getTemplate();
     this._setEventListeners();
 
     this._cardElement.querySelector(".element__image").src = this._link;
-    this._cardElement.querySelector(".element__image").alt = this._name;
     this._cardElement.querySelector(".element__title").textContent = this._name;
+    this._cardElement.querySelector(".element__image").alt = this._name;
 
     return this._cardElement;
   }
