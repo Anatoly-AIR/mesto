@@ -49,12 +49,6 @@ const popupWithFormCreateCard = new PopupWithForm({
   }
 });
 
-/*  cardElement.renderer(data);
-  //getCardElement(data);
-  evt.target.reset();
-  closePopupCreateCard();
-}*/
-
 const cardList = new Section({
   items: initialCards,
   renderer: (data) => {
@@ -94,11 +88,3 @@ editProfileButton.addEventListener('click', () => {  //клик по кнопк�
 popupWithFormEditProfile.setEventListeners();
 popupWithFormCreateCard.setEventListeners();
 popupWithImage.setEventListeners();
-
-//popupEditButton.addEventListener("click", openPopupEdit); //клик по кнопке редактирования профиля
-//popupCloseTypeProfile.addEventListener("click", closePopupEdit); //клик по кнопке закрытия окна редактирования профиля
-//popupCreateCardButton.addEventLsistener("click", openPopupCreateCard); //клик по кнопке добавления карточки
-//popupCloseTypeCard.addEventListener("click", closePopupCreateCard); //клик по кнопке закрытия окна добавления карточки
-//popupCloseTypeImg.addEventListener("click", closePopupImage); //клик по кнопке закрытия большого изображения
-//formEditProfile.addEventListener("submit", handleEditProfileSubmit); //клик по кнопке "Сохранить" в окне редактирования профиля
-//formAddCard.addEventListener("submit", handleCreateCardSubmit); //клик по кнопке "Создать" в окне добавления карточки
