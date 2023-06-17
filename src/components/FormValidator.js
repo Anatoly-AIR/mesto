@@ -1,11 +1,3 @@
-export const config = {
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.submit-button',
-  inactivButtonClass: 'submit-button_inactive',
-  inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__input-error_activ'
-}
-
 export class FormValidator {
   constructor(config, formElement) {
     this._formElement = formElement;
@@ -17,11 +9,11 @@ export class FormValidator {
   }
 
   _showInputError (inputElement, errorMessage) {
-  const errorElement = document.querySelector(`.${inputElement.id}-error`);
-  inputElement.classList.add(this._inputErrorClass);
-  errorElement.textContent = errorMessage;
-  errorElement.classList.add(this._errorClass);
-}
+    const errorElement = document.querySelector(`.${inputElement.id}-error`);
+    inputElement.classList.add(this._inputErrorClass);
+    errorElement.textContent = errorMessage;
+    errorElement.classList.add(this._errorClass);
+  }
 
   _hideInputError (inputElement) {
     const errorElement = document.querySelector(`.${inputElement.id}-error`);

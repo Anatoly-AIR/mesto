@@ -1,32 +1,17 @@
-import '../src/pages/index.css';
-import {Card} from "../src/scripts/Card.js";
-import {FormValidator, config} from "../src/scripts/FormValidator.js"
-import {Section} from "../src/scripts/Section.js";
-import { initialCards } from "../src/scripts/utils.js";
-import { Popup } from "../src/scripts/Popup.js";
-import { PopupWithImage } from "../src/scripts/PopupWithImage.js";
-import { PopupWithForm } from "../src/scripts/PopupWithForm.js";
-import { UserInfo } from "../src/scripts/UserInfo.js";
-import { editProfileButton, CreateCardButton, popupProfile, popupCard, formEditProfile, formAddCard, nameInput, jobInput, titleImage, linkImage } from "../src/scripts/utils.js";
-import { data } from 'autoprefixer';
+import './index.css';
+import {Card} from '../components/Card.js';
+import {FormValidator} from "../components/FormValidator.js";
+import { initialCards, config } from "../utils/utils.js";
+import {Section} from "../components/Section.js";
+import { PopupWithImage } from "../components/PopupWithImage.js";
+import { PopupWithForm } from "../components/PopupWithForm.js";
+import { UserInfo } from "../components/UserInfo.js";
+import { editProfileButton, CreateCardButton, formEditProfile, formAddCard, nameInput, jobInput, titleImage, linkImage } from "../utils/utils.js";
 
 const userInfo = new UserInfo({
   profileNameSelector: '.profile-info__title',
   profileJobSelector: '.profile-info__subtitle'
 });
-
-const popupEditProfile = new Popup (
-  '.popup_type_profile'
-)
-
-const popupTypeCard = new Popup (
-  '.popup_type_card'
-)
-
-const popup = new Popup (
-  //'.popup_type_profile'
-  '.popup'
-)
 
 const popupWithImage = new PopupWithImage('.popup_type_image');
 
@@ -40,12 +25,7 @@ const popupWithFormEditProfile = new PopupWithForm({
 const popupWithFormCreateCard = new PopupWithForm({
   popupSelector: '.popup_type_card',
   handleFormSubmit: (data) => {
-    data.name = titleImage.value,
-    data.link = linkImage.value
-    const card = new Card({data}, "#element-template");
-    const cardElement = card.createCard();
-    cardList.addItem(cardElement);
-    console.log(data);
+    cardList.renderer({name: data.title, link: data.link});
   }
 });
 
@@ -55,7 +35,7 @@ const cardList = new Section({
     const card = new Card({
       data,
       handleCardClick: () => {
-        popupWithImage.open(data);
+        popupWithImage.open({name: data.name, link: data.link});
       }
     }, "#element-template");
       const cardElement = card.createCard();
@@ -64,7 +44,6 @@ const cardList = new Section({
   },
   '.elements'
 );
-
 
 cardList.renderItems();
 
@@ -75,11 +54,11 @@ const cardFormValidator = new FormValidator(config, formAddCard);
 cardFormValidator.enableValidation();
 
 CreateCardButton.addEventListener("click", () => {  //клик по кнопке создания новой карточки
-  popupTypeCard.open(); //открываем попап с формой создания новой карточки
+  popupWithFormCreateCard.open(); //открываем попап с формой создания новой карточки
 });
 
 editProfileButton.addEventListener('click', () => {  //клик по кнопке редактирования профиля
-  popupEditProfile.open();
+  popupWithFormEditProfile.open(); //открываем попап с формой редактирования профиля
   const profileInfo = userInfo.getUserInfo();
   nameInput.value = profileInfo.firstname;
   jobInput.value = profileInfo.job;

@@ -5,9 +5,8 @@ export class Section {
     this._container = document.querySelector(containerSelector);
   }
 
-  //отрисовываем одну карточку
-  renderer(item) {
-    this._renderer(item);
+  renderer(data) {
+    this._renderer(data);
   }
 
   //отрисовываем все карточки
@@ -15,7 +14,6 @@ export class Section {
     this._renderedItems.forEach(item => {
     this._renderer(item);
     });
-
   }
 
   //добавляем карточку в контейнер

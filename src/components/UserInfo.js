@@ -1,5 +1,3 @@
-import { nameInput, jobInput } from "../scripts/utils.js"
-
 export class UserInfo {
   constructor({profileNameSelector, profileJobSelector}) {
   this._profileNameElement = document.querySelector(profileNameSelector);

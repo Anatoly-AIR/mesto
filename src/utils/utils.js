@@ -31,8 +31,6 @@ export const popupImageCaption = popup.querySelector(".popup__image-caption");
 export const profile = document.querySelector(".profile");
 export const popupEditButton = profile.querySelector(".edit-button");
 export const popupAddCardButton = profile.querySelector(".add-button");
-//export const nameInput = document.querySelector(".popup__input_el_name");
-//export const jobInput = document.querySelector(".popup__input_el_job");
 export const editProfileButton = profile.querySelector(".edit-button");
 export const CreateCardButton = profile.querySelector(".add-button");
 export const popupProfile = document.querySelector(".popup_type_profile");
@@ -43,3 +41,10 @@ export const nameInput = document.querySelector(".popup__input_el_name");
 export const jobInput = document.querySelector(".popup__input_el_job");
 export const titleImage = formAddCard.querySelector(".popup__input_el_title");
 export const linkImage = formAddCard.querySelector(".popup__input_el_link");
+export const config = {
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.submit-button',
+  inactivButtonClass: 'submit-button_inactive',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__input-error_activ'
+}
