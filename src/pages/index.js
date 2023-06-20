@@ -6,7 +6,7 @@ import {Section} from "../components/Section.js";
 import { PopupWithImage } from "../components/PopupWithImage.js";
 import { PopupWithForm } from "../components/PopupWithForm.js";
 import { UserInfo } from "../components/UserInfo.js";
-import { editProfileButton, CreateCardButton, formEditProfile, formAddCard, nameInput, jobInput, titleImage, linkImage } from "../utils/utils.js";
+import { editProfileButton, CreateCardButton, formEditProfile, formAddCard, nameInput, jobInput } from "../utils/utils.js";
 
 const userInfo = new UserInfo({
   profileNameSelector: '.profile-info__title',
@@ -34,8 +34,8 @@ const cardList = new Section({
   renderer: (data) => {
     const card = new Card({
       data,
-      handleCardClick: () => {
-        popupWithImage.open({name: data.name, link: data.link});
+      handleCardClick: (name, link) => {
+        popupWithImage.open({name, link});
       }
     }, "#element-template");
       const cardElement = card.createCard();
