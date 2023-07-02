@@ -1,5 +1,5 @@
 export class Card {
-  constructor({data, handleCardClick, handleCardLike, handleCardDeleteOpen, myId}, templateSelector) {
+  constructor({data, handleCardClick, handleCardLike, handleCardDeleteOpen, myId }, templateSelector) {
     this._name = data.name;
     this._link = data.link;
     this._likes = data.likes;
@@ -98,7 +98,6 @@ export class Card {
 
     console.log(`this.myId: ${this._myId}`);
     //console.log(`this._ownerId: ${this._ownerId}`);
-
 
     return this._cardElement;
   }

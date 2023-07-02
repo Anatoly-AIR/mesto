@@ -1,6 +1,3 @@
-import { Section } from "../components/Section.js";
-import { profileInfoTitle, profileInfoSubtitle, profileAvatar } from "../utils/utils.js"
-
 export class Api {
   constructor({baseURL, headers}) {
     this._baseURL = baseURL;
@@ -14,18 +11,9 @@ export class Api {
       .then(res => {
         if (res.ok) {
         return res.json();
-      }
+        }
+        Promise.reject
     })
-      /*.then((res) => {
-        console.log(res);
-        console.log(res.name, res.about, res.avatar, res._id);
-        profileInfoTitle.textContent = res.name;
-        profileInfoSubtitle.textContent = res.about;
-        profileAvatar.src = res.avatar;
-      })
-      .catch((err) => {
-        console.log('Ошибка запроса', err);
-      });*/
   }
 
   getInitialCards() {  //загружаем карточки с сервера
@@ -36,6 +24,7 @@ export class Api {
       if (res.ok) {
         return res.json();
       }
+      Promise.reject;
     })
     /*.then((res) => {
       console.log(res);
@@ -56,10 +45,12 @@ export class Api {
       if (res.ok) {
         return res.json();
       }
+      Promise.reject;
     })
     .then((res) => {
-      console.log(res);
+      //console.log(res);
     })
+    .catch((error) => console.error(`ошибка ${error}`))
   }
 
   handleEditAvatar(data) {  //редактируем аватар
@@ -74,10 +65,12 @@ export class Api {
       if (res.ok) {
         return res.json();
       }
+      Promise.reject;
     })
     .then((res) => {
-      console.log(res);
+      //console.log(res);
     })
+    .catch((error) => console.error(`ошибка ${error}`))
   }
 
   handleAddCard(data) {  //добавляем карточку на сервер
@@ -93,10 +86,12 @@ export class Api {
       if (res.ok) {
         return res.json();
       }
+      Promise.reject;
     })
     .then((res) => {
-      console.log(res);
+      //console.log(res);
     })
+    .catch((error) => console.error(`ошибка ${error}`))
   }
 
   handleDeleteCard(cardId) {  //удаляем карточку с сервера
@@ -110,7 +105,7 @@ export class Api {
       }
     })
     .then((res) => {
-      console.log(res);
+      //console.log(res);
     })
     .catch ((error => console.log(`Ошибка: ${error}`)))
   }
