@@ -32,10 +32,7 @@ const api = new Api({
 
 api.getUserInfo()
   .then((res) => {
-    console.log(res);
-    console.log(res.name, res.about, res.avatar, res._id);
     myId = res._id;
-    console.log(`myId: ${myId}`);
     profileInfoTitle.textContent = res.name;
     profileInfoSubtitle.textContent = res.about;
     profileAvatar.src = res.avatar;
@@ -44,8 +41,6 @@ api.getUserInfo()
   .catch((err) => {
     console.log('Ошибка запроса', err);
   })
-  .finally();
-
 
 const arrayCards = await api.getInitialCards();
 

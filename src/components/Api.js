@@ -26,10 +26,6 @@ export class Api {
       }
       Promise.reject;
     })
-    /*.then((res) => {
-      console.log(res);
-      console.log(res[0].name, res[0].link);
-    })*/
   }
 
   handleEditProfile(data) {  //редактируем профиль(кроме аватара)
