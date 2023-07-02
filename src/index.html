@@ -12,7 +12,11 @@
     <main class="content">
       <section class="profile">
         <div class="profile__container">
+<<<<<<< HEAD
           <img class="profile__avatar" src="" alt="Винни Пух с горшочком мёда">
+=======
+          <img class="profile__avatar" src="<%=require('./images/Vinni_Puh.jpg')%>" alt="Винни Пух с горшочком мёда">
+>>>>>>> feature/like_card
           <div class="profile-info">
             <div class="profile-info__container">
               <h1 class="profile-info__title"></h1> <!--сюда данные придут с сервера-->
@@ -50,7 +54,7 @@
         <button class="popup__close popup__close_type_edit-avatar" type="button"></button>
         <form class="popup__form popup__form_type_edit-avatar" name="form-edit-avatar" method="post" novalidate>
           <h2 class="popup__title">Обновить аватар</h2>
-          <input id="link-input" type="url" name="link" placeholder="Ссылка на аватар" class="popup__input popup__input_el_link-avatar" minlength="2" maxlength="200" required>
+          <input id="link-input" type="url" name="avatar" placeholder="Ссылка на аватар" class="popup__input popup__input_el_link-avatar" minlength="2" maxlength="200" required>
           <span class="link-input-error popup__input-error"></span>
           <button class="submit-button" type="submit">Сохранить</button>
         </form>
