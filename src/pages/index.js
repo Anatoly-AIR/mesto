@@ -52,18 +52,6 @@ const userInfo = new UserInfo({
 
 const popupWithImage = new PopupWithImage('.popup_type_image');
 
-/*const popupWithFormEditProfile = new PopupWithForm({
-  popupSelector: '.popup_type_profile',
-  handleFormSubmit: (data) => {
-    api.handleEditProfile(data)
-    .then(data => {
-      userInfo.setUserInfo(data);
-    })
-    .catch((error) => console.error(`ошибка ${error}`))
-    .finally();
-  }
-});*/
-
 const popupWithFormEditProfile = new PopupWithForm({
   popupSelector: '.popup_type_profile',
   handleFormSubmit: (data) => {
