@@ -1,0 +1,13 @@
+.quantity-like {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 400;
+  text-align: center;
+  color: #000;
+  margin: 0;
+  padding-top: 3px;
+  /*text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;*/
+}

@@ -12,13 +12,14 @@
     <main class="content">
       <section class="profile">
         <div class="profile__container">
-          <img class="profile__avatar" src="<%=require('./images/image.jpg')%>" alt="Ж-И.Кусто в красной шапочке">
+          <!--<img class="profile__avatar" src="<%=require('./images/Vinni_Puh.jpg')%>" alt="Ж-И.Кусто в красной шапочке">-->
+          <img class="profile__avatar" src="" alt="Винни Пух с горшочком мёда">
           <div class="profile-info">
             <div class="profile-info__container">
-              <h1 class="profile-info__title">Жак-Ив Кусто</h1>
+              <h1 class="profile-info__title"></h1> <!--сюда данные придут с сервера-->
               <button class="edit-button" type="button"></button>
             </div>
-            <p class="profile-info__subtitle">Иcследователь океана</p>
+            <p class="profile-info__subtitle"></p> <!--сюда данные придут с сервера-->
           </div>
         </div>
         <button class="add-button" type="button"></button>
@@ -40,6 +41,18 @@
           <span class="name-input-error popup__input-error"></span>
           <input id="job-input" type="text" name="job" placeholder="Род занятий" class="popup__input popup__input_el_job" minlength="2" maxlength="200" required>
           <span class="job-input-error popup__input-error"></span>
+          <button class="submit-button" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup popup_type_edit-avatar"> <!--модальное окно редактирования аватара-->
+      <div class="popup__container">
+        <button class="popup__close popup__close_type_edit-avatar" type="button"></button>
+        <form class="popup__form popup__form_type_edit-avatar" name="form-edit-avatar" method="post" novalidate>
+          <h2 class="popup__title">Обновить аватар</h2>
+          <input id="link-input" type="url" name="link" placeholder="Ссылка на аватар" class="popup__input popup__input_el_link-avatar" minlength="2" maxlength="200" required>
+          <span class="link-input-error popup__input-error"></span>
           <button class="submit-button" type="submit">Сохранить</button>
         </form>
       </div>
@@ -67,13 +80,26 @@
       </div>
     </div>
 
+    <div class="popup popup_type_delete-card">  <!--модальное окно удаления карточки-->
+      <div class="popup__container">
+        <button class="popup__close popup__close_type_card" type="button"></button>
+        <form class="popup__form popup__form_type_delete" name="delete-card" method="post" novalidate>
+          <h2 class="popup__title">Вы уверены?</h2>
+          <button class="submit-button" type="submit">Да</button>
+        </form>
+      </div>
+    </div>
+
     <template id="element-template">  <!--шаблон элемента element-->
       <article class="element">
         <button class="trash-button" type="button"></button>
         <img class="element__image">
         <div class="element__container">
           <h2 class="element__title"></h2>
-          <button class="heart-button" type="button"></button>
+          <div class="like-container">
+            <button class="heart-button" type="button"></button>
+            <p class="quantity-like"></p>
+          </div>
         </div>
       </article>
     </template>

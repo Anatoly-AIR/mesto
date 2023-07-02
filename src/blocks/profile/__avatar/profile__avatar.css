@@ -3,6 +3,12 @@
   object-fit: contain;
   border-radius: 50%;
   margin-right: 27px;
+  cursor: url(../../../images/Pen.svg), pointer;
+}
+
+.profile__avatar:hover {
+  opacity: .6;
+  transition: opacity .5s ease;
 }
 
 @media screen and (max-width: 525px) {

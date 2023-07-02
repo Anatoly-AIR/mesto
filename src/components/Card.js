@@ -1,9 +1,16 @@
 export class Card {
-  constructor({data, handleCardClick}, templateSelector) {
+  constructor({data, handleCardClick, handleCardLike, handleCardDeleteOpen, myId}, templateSelector) {
     this._name = data.name;
     this._link = data.link;
+    this._likes = data.likes;
+    this._idCard = data._id;
+    this._myId = myId;
+    this._ownerId = data.owner._id;
+    this._quantityLikes = data.likes.length;
     this._handleCardClick = handleCardClick;
     this._templateSelector = templateSelector;
+    this._handleCardLike = handleCardLike;
+    this._handleCardDeleteOpen = handleCardDeleteOpen;
   }
 
   _getTemplate() {
@@ -32,19 +39,42 @@ export class Card {
     });
 
     this._heartButton.addEventListener("click", () => {
-      this._likeCard();
+      this._handleCardLike(this._idCard);
     });
 
     this._trashButton.addEventListener("click", () => {
-      this._deleteCard();
+      this._handleCardDeleteOpen(this._idCard);
+      //this._deleteCard();
     });
   }
 
-  _likeCard() {
+  isLiked() {
+    if(this._heartButton.classList.contains("heart-button_activ")) {
+      return true;
+    }
+    return false;
+  }
+
+  toggleLike(likes) {
     this._heartButton.classList.toggle("heart-button_activ");
+    this._cardElement.querySelector(".quantity-like").textContent = likes;
+}
+
+  handleLikeCard(likes) {
+    this._heartButton.classList.add("heart-button_activ");
+    this._cardElement.querySelector(".quantity-like").textContent = likes;
+  }
+
+  handleDislikeCard(likes) {
+    this._heartButton.classList.remove("heart-button_activ");
+    this._cardElement.querySelector(".quantity-like").textContent = likes;
   }
 
   _deleteCard() {
+    this._cardElement.remove();
+  }
+
+  deleteCard() {
     this._cardElement.remove();
   }
 
@@ -56,8 +86,19 @@ export class Card {
     this._setEventListeners();
 
     this._cardElement.querySelector(".element__title").textContent = this._name;
+    this._cardElement.querySelector(".quantity-like").textContent = this._quantityLikes;
     this._cardImage.src = this._link;
     this._cardImage.alt = this._name;
+
+    if (this._myId === this._ownerId) {
+      this._trashButton.style.display = 'block';
+    }else {
+      this._trashButton.style.display = 'none';
+    };
+
+    console.log(`this.myId: ${this._myId}`);
+    //console.log(`this._ownerId: ${this._ownerId}`);
+
 
     return this._cardElement;
   }

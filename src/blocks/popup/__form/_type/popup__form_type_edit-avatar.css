@@ -1,0 +1,13 @@
+.popup__form_type_edit-avatar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 34px 36px 37px;
+}
+
+@media screen and (max-width: 390px) {
+  .popup__form_type_edit-avatar {
+    padding: 25px 22px;
+  }
+}

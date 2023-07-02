@@ -1,0 +1,6 @@
+.like-container {
+  min-width: 22px;
+  max-height: 35px;
+  display: flex;
+  flex-direction: column;
+}
